@@ -1,4 +1,4 @@
-# Clappsy Platform
+# Clappsy Platform 😃
 
 This web platform is the one needed for the whole functionality of the project, even for the mobile app as an API server.
 
