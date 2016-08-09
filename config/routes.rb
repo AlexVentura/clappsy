@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
 	# The very first page when loading the app
 	root 'welcome#index'
 
