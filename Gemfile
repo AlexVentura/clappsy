@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # CSS framework for FrontEnd side
 # gem 'materialize-sass', '~> 0.97.7'
 # Manage user authentication
-# gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.2'
 # Manage authentication with Facebook & LinkedIn
 # gem 'omniauth'
 # gem 'omniauth-facebook'
