@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	protected
 
 	def configure_permitted_parameters
-		# Permitimos campos de Devise + los personalizados en un hash
+		# Permit Devise attributes + personalized ones in a hash
 		devise_parameter_sanitizer.for(:sign_up) { |u|
 			u.permit(:email, :password, :password_confirmation,
 				profile_attributes: [

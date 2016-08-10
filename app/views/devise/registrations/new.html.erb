@@ -3,9 +3,6 @@
 <% resource.build_profile if resource.profile.nil? %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
-	<% if session[:omniauth_errors] %>
-		<%= session[:omniauth_errors] %>
-	<% end %>
 
 	<div class="field">
 		<%= f.label :email %><br />
