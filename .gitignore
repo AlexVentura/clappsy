@@ -17,6 +17,7 @@
 .byebug_history
 
 # Environment variables file
+.env
 /.env
 
 # MacOS files
