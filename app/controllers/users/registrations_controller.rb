@@ -1,0 +1,45 @@
+class Users::RegistrationsController < Devise::RegistrationsController
+	# Add custom attributes to Devise
+	before_filter :configure_permitted_parameters
+
+	# GET /users/sign_up
+	def new
+		# Override Devise default behaviour and create a profile as well
+		build_resource({})
+		resource.build_profile
+		respond_with self.resource
+	end
+
+	protected
+
+	def configure_permitted_parameters
+		# Permitimos campos de Devise + los personalizados en un hash
+		devise_parameter_sanitizer.for(:sign_up) { |u|
+			u.permit(:email, :password, :password_confirmation,
+				profile_attributes: [
+					:first_name, :second_name, :last_name, :adress, :city, :state,
+					:birthday
+				]
+			)
+		}
+
+		devise_parameter_sanitizer.for(:account_update) do |u|
+			u.permit(:password, :password_confirmation, :current_password,
+				profile_attributes: [
+					:first_name, :second_name, :last_name, :adress, :city, :state,
+					:birthday
+				]
+			)
+		end
+	end
+
+	def after_sign_up_path_for(resource)
+		# session["user_return_to"] || root_path
+		signed_in_root_path(resource)
+		# events_path
+	end
+
+	def after_update_path_for(resource)
+		signed_in_root_path(resource)
+	end
+end
