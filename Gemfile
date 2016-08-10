@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 #===== LenguajeMX =====
 # CSS framework for FrontEnd side
-# gem 'materialize-sass', '~> 0.97.7'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # Manage user authentication
 gem 'devise', '~> 4.2'
 # Manage authentication with Facebook & LinkedIn
@@ -47,6 +47,8 @@ gem 'devise', '~> 4.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # For setting up Environment variables
+  gem 'dotenv-rails'
 end
 
 group :development do
