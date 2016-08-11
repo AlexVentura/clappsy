@@ -39,7 +39,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2'
 # Manage authentication with Facebook & LinkedIn
 # gem 'omniauth'
-# gem 'omniauth-facebook'
+gem 'omniauth-facebook'
 # gem 'omniauth-linkedin'
 # To manage image uploads
 # gem 'paperclip', '~> 5.0'
