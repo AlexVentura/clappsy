@@ -14,8 +14,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 	def configure_permitted_parameters
 		# Permit Devise attributes + personalized ones in a hash
-		devise_parameter_sanitizer.for(:sign_up) { |u|
-			u.permit(:email, :password, :password_confirmation,
+		devise_parameter_sanitizer.permit(:sign_up) { |user_params|
+			user_params.permit(:email, :password, :password_confirmation,
 				profile_attributes: [
 					:first_name, :second_name, :last_name, :adress, :city, :state,
 					:birthday
@@ -23,8 +23,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 			)
 		}
 
-		devise_parameter_sanitizer.for(:account_update) do |u|
-			u.permit(:password, :password_confirmation, :current_password,
+		devise_parameter_sanitizer.permit(:account_update) do |user_params|
+			user_params.permit(:password, :password_confirmation, :current_password,
 				profile_attributes: [
 					:first_name, :second_name, :last_name, :adress, :city, :state,
 					:birthday
