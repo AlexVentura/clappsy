@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 	# Add custom attributes to Devise
-	before_filter :configure_permitted_parameters
+	before_action :configure_permitted_parameters
 
 	# GET /users/sign_up
 	def new

@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
 	# Allow saving of attributes on associated records through the parent,
 	# :autosave option is automatically enabled on every association
-	accepts_nested_attributes_for :profile
+	accepts_nested_attributes_for :profile, allow_destroy: true
 
 	# === Devise Configs ===
 	# Include default devise modules. Others available are:
