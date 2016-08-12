@@ -8,12 +8,11 @@
 				<li><a href="#">Deals</a></li>
 				<li><a href="#">Stores</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>Your Account</a></li>
-				<li><%= link_to 'Editar Perfil', edit_user_registration_path %></li>
+				<li><a href="<%= edit_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Editar Perfil</a></li>
 				<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
 			<% else %>
-				<li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a></li>
-				<li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span>Registrate</a></li>
+				<li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+				<li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
 			<% end %>
 		</ul>
 	</div>

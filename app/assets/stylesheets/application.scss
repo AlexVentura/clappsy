@@ -19,3 +19,13 @@
 @import "bootstrap";
 /* import bootstrap-sprockets before bootstrap if using bootstrap >= 3.2 */
 @import 'bootstrap-datetimepicker';
+
+body {
+	padding-top: 50px;
+}
+
+#notice_wrapper {
+	.alert {
+		margin-bottom: 0px;
+	}
+}

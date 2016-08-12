@@ -17,3 +17,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// To dismiss Rails  notifications and alerts
+$(document).ready(function () {
+    setTimeout(function () {
+        $("#notice_wrapper").fadeOut("slow", function () {
+            $(this).remove();
+        });
+    }, 5000);
+});

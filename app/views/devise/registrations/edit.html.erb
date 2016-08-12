@@ -1,77 +1,81 @@
-<h2>Editar Perfil <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+			<h2>Editar Perfil <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-	<%= devise_error_messages! %>
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				<%= devise_error_messages! %>
 
-	<div class="field">
-		<%= f.label :email %><br />
-		<%= f.email_field :email, autofocus: true %>
+				<div class="field">
+					<%= f.label :email %><br />
+					<%= f.email_field :email, autofocus: true %>
+				</div>
+
+				<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+					<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+				<% end %>
+
+				<div class="field">
+					<%= f.label :password %> <i>(deje en blanco si no quiere cambiar su contraseña)</i><br />
+					<%= f.password_field :password, autocomplete: "off" %>
+					<% if @minimum_password_length %>
+						<br />
+						<em><%= @minimum_password_length %> caracteres como mínimo</em>
+					<% end %>
+				</div>
+
+				<div class="field">
+					<%= f.label :password_confirmation %><br />
+					<%= f.password_field :password_confirmation, autocomplete: "off" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :current_password %> <i>(debe ingresar su contraseña para confirmar los cambios)</i><br />
+					<%= f.password_field :current_password, autocomplete: "off" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :first_name, 'Nombre' %><br />
+					<%= f.text_field :first_name, class: '' %>
+				</div>
+				<div class="field">
+					<%= f.label :second_name, 'Apellido Paterno' %><br />
+					<%= f.text_field :second_name, class: '' %>
+				</div>
+				<div class="field">
+					<%= f.label :last_name, 'Apellido Materno' %><br />
+					<%= f.text_field :last_name, class: '' %>
+				</div>
+				<div class="field">
+					<%= f.label :adress, 'Dirección' %><br />
+					<%= f.text_field :adress, class: '' %>
+				</div>
+				<div class="field">
+					<%= f.label :city, 'Ciudad' %><br />
+					<%= f.text_field :city %>
+				</div>
+				<div class="field">
+					<%= f.label :state, 'Estado' %><br />
+					<%= f.text_field :state %>
+				</div>
+				<div class="field">
+					<%= f.label :birthday, 'Fecha de Nacimiento' %><br />
+					<%= f.date_field :birthday %>
+				</div>
+
+				<div class="actions" style="margin-top: 20px;">
+					<%= f.submit 'Guardar cambios', class: 'btn btn-info' %>
+				</div>
+			<% end %>
+
+			<h3>Cancelar mí cuenta</h3>
+
+			<p>¿Insatisfecho con el servicio? <%= button_to "Cancelar mí cuenta", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "¿Está seguro de eliminar su cuenta?" }, method: :delete  %></p>
+
+			<div class="input-field col s12">
+				<br>
+				<%= link_to "Regresar", :back %>
+			</div>
+		</div>
 	</div>
-
-	<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-		<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-	<% end %>
-
-	<div class="field">
-		<%= f.label :password %> <i>(deje en blanco si no quiere cambiar su contraseña)</i><br />
-		<%= f.password_field :password, autocomplete: "off" %>
-		<% if @minimum_password_length %>
-			<br />
-			<em><%= @minimum_password_length %> caracteres como mínimo</em>
-		<% end %>
-	</div>
-
-	<div class="field">
-		<%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation, autocomplete: "off" %>
-	</div>
-
-	<div class="field">
-		<%= f.label :current_password %> <i>(debe ingresar su contraseña para confirmar los cambios)</i><br />
-		<%= f.password_field :current_password, autocomplete: "off" %>
-	</div>
-
-	<%= f.fields_for :person do |p| %>
-		<div class="field">
-			<%= p.label :first_name, 'Nombre' %><br />
-			<%= p.text_field :first_name, class: '' %>
-		</div>
-		<div class="field">
-			<%= p.label :second_name, 'Apellido Paterno' %><br />
-			<%= p.text_field :second_name, class: '' %>
-		</div>
-		<div class="field">
-			<%= p.label :last_name, 'Apellido Materno' %><br />
-			<%= p.text_field :last_name, class: '' %>
-		</div>
-		<div class="field">
-			<%= p.label :adress, 'Dirección' %><br />
-			<%= p.text_field :adress, class: '' %>
-		</div>
-		<div class="field">
-			<%= p.label :city, 'Ciudad' %><br />
-			<%= p.text_field :city %>
-		</div>
-		<div class="field">
-			<%= p.label :state, 'Estado' %><br />
-			<%= p.text_field :state %>
-		</div>
-		<div class="field">
-			<%= p.label :birthday, 'Fecha de Nacimiento' %><br />
-			<%= p.date_field :birthday %>
-		</div>
-	<% end %>
-
-	<div class="actions">
-		<%= f.submit 'Guardar cambios' %>
-	</div>
-<% end %>
-
-<h3>Cancelar mí cuenta</h3>
-
-<p>¿Insatisfecho con el servicio? <%= button_to "Cancelar mí cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro de eliminar su cuenta?" }, method: :delete %></p>
-
-<div class="input-field col s12">
-	<br>
-	<%= link_to "Back", :back %>
 </div>
