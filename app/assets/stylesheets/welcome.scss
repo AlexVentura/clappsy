@@ -8,11 +8,27 @@
 	// height: 60px;
 	margin-bottom: 0;
 
-	.container-fluid .navbar-brand {
-		font-family: 'Pacifico', cursive;
-		font-size: 33px;
-		margin-top: -4px;
+	.navbar-brand {
+	    color: #FF54B7 !important;
 	}
+
+	.container-fluid {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		.navbar-brand {
+			font-family: 'Pacifico', cursive;
+			font-size: 33px;
+			margin-top: -4px;
+		}
+	}
+}
+
+.panel-heading {
+	background-color: #FFABE3 !important;
+}
+
+.panel-primary {
+	border-color: #FD88D3 !important;
 }
 
 .carousel-inner img {

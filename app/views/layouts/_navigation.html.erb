@@ -5,9 +5,7 @@
 		</div>
 		<ul class="nav navbar-nav navbar-right">
 			<% if user_signed_in? %>
-				<li><a href="#">Deals</a></li>
-				<li><a href="#">Stores</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="#">Matches</a></li>
 				<li><a href="<%= edit_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Editar Perfil</a></li>
 				<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
 			<% else %>
