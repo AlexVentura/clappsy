@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 #===== LenguajeMX =====
 # CSS framework for FrontEnd side
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17', '>= 4.17.37'
 # Manage user authentication
 gem 'devise', '~> 4.2'
 # Manage authentication with Facebook & LinkedIn
