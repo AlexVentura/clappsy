@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dresses
 	get 'welcome/index'
 
 	# The very first page when loading the app
