@@ -4,19 +4,27 @@
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
-	margin-bottom: 0;
 	border-radius: 0;
+	// height: 60px;
+	margin-bottom: 0;
+
+	.container-fluid .navbar-brand {
+		font-family: 'Pacifico', cursive;
+		font-size: 33px;
+		margin-top: -4px;
+	}
 }
 
 .carousel-inner img {
 	width: 100%; /* Set width to 100% */
 	margin: auto;
-	min-height:200px;
+	min-height: 200px;
 }
 
 /* Remove the jumbotron's default bottom margin */
 .jumbotron {
 	margin-bottom: 0;
+
 	h2 {
 		font-size: 50px;
 	}
