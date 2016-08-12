@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Clappsy</title>
 	<%= csrf_meta_tags %>
 
@@ -9,9 +10,23 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-
-	<%= yield %>
+	<!-- http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
+	<header>
+		<%= render 'layouts/navigation' %>
+		<div style="<%= 'display: none;' if notice.nil? and alert.nil? %>">
+			<div id="float-alert">
+				<p class="notice"><%= notice %></p>
+	    		<p class="alert"><%= alert %></p>
+			</div>
+	    </div>
+	</header>
+	<main>
+		<section>
+			<%= yield %>
+		</section>
+	</main>
+	<footer class="container-fluid text-center">
+		<%= render "layouts/footer" %>
+	</footer>
 </body>
 </html>

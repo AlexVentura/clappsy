@@ -17,3 +17,5 @@
 /* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables" */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* import bootstrap-sprockets before bootstrap if using bootstrap >= 3.2 */
+@import 'bootstrap-datetimepicker';
